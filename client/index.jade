@@ -1,0 +1,53 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')      
+    title Personalio
+    link(rel='stylesheet', href='/vendor/font-awesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href=isProd ? '/index.min.css' : '/index.css')
+    link(rel='shortcut icon', href='/favicon.ico')
+  body
+    h1 Your Personalio Account
+    #personal-info
+      #name-div
+        label Name: 
+        input#user(type='text', autofocus=true)
+      #balance-div
+        label Balance: 
+        input#balance
+      button#update-account Update Account
+      #display
+        label#owner
+        label#total-balance  
+    
+    #manage
+      #folio-update
+        input#portfolioType(type='text')
+        button#create-folio Create Porfolio
+      #purchase
+        table
+          thead
+            tr
+              th Symbol
+              th Porfolio List
+              th # Shares
+              th
+          tbody
+            tr
+              td
+                input#stockID(type='text')
+              td 
+                select#portfolio-list
+              td
+                input#shareNum(type='text')
+              td
+                button#buyStocks Buy
+    #summary  
+      
+    
+    
+    script(src='/vendor/momentjs/min/moment.min.js')
+    script(src='/vendor/jquery/dist/jquery.min.js')
+    script(src='/vendor/lodash/lodash.min.js')
+    script(src='/vendor/firebase/firebase.js')
+    script(src=isProd ? '/index.min.js' : '/index.js')
